@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <link rel="icon" type="image/png" href="favicon.png" />
+  <title>Satya Prakash Samal</title>
+  <!-- Google Font: Montserrat -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    /* Reset default margins/padding */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Full-black background, Montserrat for everything except the heading */
+    body {
+      background-color: #000;
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      display: flex;
+      justify-content: center;    /* center horizontally */
+      align-items: flex-start;     /* align to top */
+      padding-top: 50px;           /* push content a bit down */
+      min-height: 100vh;
+      position: relative;          /* for absolute-positioned greeting */
+    }
+
+    /* Greeting box top-right */
+    .greeting-box {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      text-align: right;
+      font-size: 0.9rem;
+      color: #ccc;
+      line-height: 1.4;
+    }
+
+    .greeting-box .greeting {
+      font-weight: 500;
+      font-size: 1rem;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+
+    /* Center container (horizontally) */
+    .container {
+      text-align: center;
+      width: 100%;
+      max-width: 800px;
+      padding: 0 20px;
+    }
+
+    /* h1 styling: big, monospace font for typewriter vibe */
+    h1 {
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 3rem;
+      white-space: nowrap;       /* prevent wrapping during typing */
+      overflow: hidden;          /* hide overflow */
+      min-height: 3.5rem;        /* reserve vertical space even when empty */
+      margin-bottom: 10px;
+      display: inline-block;     /* shrink-wrap width to content + cursor */
+    }
+
+    /* Cursor styling: a blinking block */
+    #cursor {
+      display: inline-block;
+      width: .15em;
+      background-color: #fff;
+      margin-left: 2px;
+      animation: blink 1s step-start 0s infinite;
+      height: 1em;              /* keep the cursor at the text height */
+      vertical-align: bottom;
+    }
+
+    @keyframes blink {
+      50% {
+        background-color: transparent;
+      }
+    }
+
+    /* Red color for replaced "i" */
+    .red-letter {
+      color: red;
+    }
+
+    /* Subtitle styling (hero description) */
+    .subtitle {
+      font-size: 1.2rem;
+      color: #ddd;
+      opacity: 0.9;
+      margin-bottom: 30px;
+      font-weight: 700; /* make bold */
+    }
+
+    /* Placeholder styling */
+    .placeholder {
+      font-size: 1rem;
+      color: #ccc;
+      margin: 10px 0;
+      border: 1px dashed #555;
+      padding: 10px;
+      text-align: left;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .placeholder a {
+      color: #4CAF50;
+      text-decoration: none;
+      font-weight: bold;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .placeholder a:hover {
+      text-decoration: underline;
+    }
+
+    /* Footnote styling */
+    .footnote {
+      font-size: 0.9rem;
+      color: #aaa;
+      margin-top: 20px;
+      opacity: 0.8;
+    }
+
+    /* Mobile-specific styles */
+    @media only screen and (max-width: 600px) {
+      body {
+        padding-top: 20px;
+        display: block; /* switch off flex for mobile flow */
+      }
+      .greeting-box {
+        position: static;       /* place in normal flow */
+        margin: 0 10px 10px;    /* some padding around */
+        text-align: right;
+        font-size: 0.9rem;
+      }
+      .container {
+        padding: 0 10px;
+      }
+      h1 {
+        font-size: 2rem;
+        min-height: 2.5rem;    /* reserve vertical space */
+        margin-bottom: 8px;
+      }
+      .subtitle {
+        font-size: 1rem;
+        margin-bottom: 20px;
+      }
+      .placeholder {
+        font-size: 0.9rem;
+        margin: 8px 0;
+        padding: 8px;
+      }
+      .placeholder a {
+        font-size: 0.95rem;
+      }
+      .footnote {
+        font-size: 0.8rem;
+        margin-top: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Greeting and Date/Time -->
+  <div class="greeting-box">
+    <div class="greeting" id="greetingText"></div>
+    <div id="dateTime"></div>
+  </div>
+
+  <div class="container">
+    <!-- Typewriter heading with separate text and cursor spans -->
+    <h1>
+      <span id="text"></span><span id="cursor"></span>
+    </h1>
+
+    <!-- Static subtitle with dynamic age -->
+    <p class="subtitle">
+      <span id="age"></span> years old • Founder of Nex Games • Creator of cool websites
+    </p>
+
+    <!-- Four editable text placeholders -->
+    <div class="placeholder" id="placeholder1">
+      <a href="https://www.roblox.com/communities/16930065" target="_blank">Nex Games! –</a>
+      An indie Roblox game development studio with over 10,000 visits across our games. I created this studio to relive my childhood by making games I’d love to play all day with my friends. We’ve built a loyal community of 200+ members and reached over 2,000 unique players around the world—and counting! One of our most successful creations: Nex Tower of Hell.
+    </div>
+    <div class="placeholder" id="placeholder2">
+      <a href="https://satyaprakashsamai.github.io/typespark/" target="_blank">TypeSpark –</a>
+      A minimal, no-ads website with pure functionality. The core USP of this site is a professional tool to test and analyze your typing speed and unlock your full typing potential. So far, it’s earned ₹10 in donations, which I’m super grateful for—enough to buy one ice cream! :)
+    </div>
+    <div class="placeholder" id="placeholder3">
+      <a href="https://satyaprakashsamai.github.io/financetracker/" target="_blank">Finance Tracker –</a>
+      One of the most useful tools I use regularly. It’s a website with a simple UI and UX—no BS, as always. The core functionality helps track income and expenses, and see your overall balance. Perfect for kids and teens who want to keep track of money they receive from relatives. ;)
+    </div>
+    <div class="placeholder" id="placeholder4">
+      <a href="https://satyaprakashsamai.github.io/instacard/" target="_blank">InstaCard –</a>
+      I noticed my friends and family struggling to create invitation cards for birthdays and hangouts, often spending hours just to make a simple one. So, I decided to build my own front-end website where users can simply type in the event name, date & time, and venue, and—BOOM!—their invitation card is ready.
+    </div>
+
+    <!-- Footnote -->
+    <p class="footnote">Feel free to explore all my projects &lt;3</p>
+  </div>
+
+  <script>
+    // Calculate age based on birthday (September 9, 2008)
+    function calculateAge(birthMonth, birthDay, birthYear) {
+      const today = new Date();
+      let age = today.getFullYear() - birthYear;
+      const monthDiff = today.getMonth() - birthMonth;
+      const dayDiff = today.getDate() - birthDay;
+      // If birthday hasn't occurred yet this year, subtract 1
+      if (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0)) {
+        age--;
+      }
+      return age;
+    }
+
+    // Set dynamic age in subtitle
+    const ageEl = document.getElementById('age');
+    const age = calculateAge(8, 9, 2008); // Months are zero-based: 8 = September
+    ageEl.textContent = age;
+
+    // Greeting and Date/Time functionality
+    function updateGreetingAndTime() {
+      const now = new Date();
+      const hours = now.getHours();
+      let greeting = "";
+
+      if (hours >= 5 && hours < 12) {
+        greeting = "Good Morning, Satya!";
+      } else if (hours >= 12 && hours < 17) {
+        greeting = "Good Afternoon, Satya!";
+      } else if (hours >= 17 && hours < 21) {
+        greeting = "Good Evening, Satya!";
+      } else {
+        greeting = "Good Night, Satya!";
+      }
+
+      // Format date: e.g., September 5, 2025
+      const options = { year: "numeric", month: "long", day: "numeric" };
+      const formattedDate = now.toLocaleDateString("en-US", options);
+
+      // Format time in 12-hour format with AM/PM
+      let hours12 = hours % 12 || 12;
+      const minutes = String(now.getMinutes()).padStart(2, "0");
+      const seconds = String(now.getSeconds()).padStart(2, "0");
+      const ampm = hours >= 12 ? "PM" : "AM";
+      const formattedTime = `${hours12}:${minutes}:${seconds} ${ampm}`;
+
+      document.getElementById("greetingText").textContent = greeting;
+      document.getElementById("dateTime").textContent = `${formattedDate} · ${formattedTime}`;
+    }
+
+    // Update every second
+    setInterval(updateGreetingAndTime, 1000);
+    updateGreetingAndTime();
+
+    // Typewriter effect configuration
+    const fullText = "Satya Prakash Samal";
+    const finalSuffix = "i";           // replace last "l" with "i"
+    const typingSpeed = 120;           // ms per character when typing
+    const deletingSpeed = 100;         // ms per character when deleting
+    const pauseBeforeDelete = 1000;    // pause after fullText is typed (ms)
+    const pauseBeforeSecondType = 500; // pause before typing the "i" (ms)
+    const pauseFinalDuration = 10000;  // how long to show final text before deleting all (ms)
+    const pauseBetweenLoops = 500;     // pause before restarting loop (ms)
+
+    const textEl = document.getElementById("text");
+    const cursorEl = document.getElementById("cursor");
+
+    function typeFullText() {
+      let i = 0;
+      function typeChar() {
+        if (i < fullText.length) {
+          textEl.textContent += fullText.charAt(i);
+          i++;
+          setTimeout(typeChar, typingSpeed);
+        } else {
+          // Finished typing "Satya Prakash Samal"
+          setTimeout(deleteSuffix, pauseBeforeDelete);
+        }
+      }
+      typeChar();
+    }
+
+    function deleteSuffix() {
+      // Delete one character (the final "l") at a time
+      if (textEl.textContent.length > fullText.length - 1) {
+        textEl.textContent = textEl.textContent.slice(0, -1);
+        setTimeout(deleteSuffix, deletingSpeed);
+      } else {
+        // Deleted the last "l"
+        setTimeout(typeSuffix, pauseBeforeSecondType);
+      }
+    }
+
+    function typeSuffix() {
+      // Append the red "i" inside the text span
+      textEl.innerHTML += `<span class="red-letter">${finalSuffix}</span>`;
+      // After showing the final text, wait before deleting all
+      setTimeout(startDeletingAll, pauseFinalDuration);
+    }
+
+    function startDeletingAll() {
+      // Remove the span and get plain text
+      const plain = textEl.textContent;
+      textEl.textContent = plain;
+      deleteAll();
+    }
+
+    function deleteAll() {
+      if (textEl.textContent.length > 0) {
+        textEl.textContent = textEl.textContent.slice(0, -1);
+        setTimeout(deleteAll, deletingSpeed);
+      } else {
+        // Once fully deleted, wait a bit and restart
+        setTimeout(() => {
+          textEl.textContent = "";
+          typeFullText();
+        }, pauseBetweenLoops);
+      }
+    }
+
+    // Kick off the entire loop
+    typeFullText();
+  </script>
+</body>
+</html>
