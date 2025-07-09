@@ -126,6 +126,24 @@
       opacity: 0.8;
     }
 
+    /* Download button styling */
+    .download-btn {
+      display: inline-block;
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      margin-top: 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: 500;
+      transition: background-color 0.3s;
+    }
+
+    .download-btn:hover {
+      background-color: #45a049;
+      text-decoration: none;
+    }
+
     /* Mobile-specific styles */
     @media only screen and (max-width: 600px) {
       body {
@@ -162,6 +180,10 @@
         font-size: 0.8rem;
         margin-top: 15px;
       }
+      .download-btn {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+      }
     }
   </style>
 </head>
@@ -186,20 +208,23 @@
     <!-- Four editable text placeholders -->
     <div class="placeholder" id="placeholder1">
       <a href="https://www.roblox.com/communities/16930065" target="_blank">Nex Games! –</a>
-      An indie Roblox game development studio with over 10,000 visits across our games. I created this studio to relive my childhood by making games I’d love to play all day with my friends. We’ve built a loyal community of 200+ members and reached over 2,000 unique players around the world—and counting! One of our most successful creations: Nex Tower of Hell.
+      An indie Roblox game development studio with over 10,000 visits across our games. I created this studio to relive my childhood by making games I'd love to play all day with my friends. We've built a loyal community of 200+ members and reached over 2,000 unique players around the world—and counting! One of our most successful creations: Nex Tower of Hell.
     </div>
     <div class="placeholder" id="placeholder2">
       <a href="https://satyaprakashsamai.github.io/typespark/" target="_blank">TypeSpark –</a>
-      A minimal, no-ads website with pure functionality. The core USP of this site is a professional tool to test and analyze your typing speed and unlock your full typing potential. So far, it’s earned ₹10 in donations, which I’m super grateful for—enough to buy one ice cream! :)
+      A minimal, no-ads website with pure functionality. The core USP of this site is a professional tool to test and analyze your typing speed and unlock your full typing potential. So far, it's earned ₹10 in donations, which I'm super grateful for—enough to buy one ice cream! :)
     </div>
     <div class="placeholder" id="placeholder3">
       <a href="https://satyaprakashsamai.github.io/financetracker/" target="_blank">Finance Tracker –</a>
-      One of the most useful tools I use regularly. It’s a website with a simple UI and UX—no BS, as always. The core functionality helps track income and expenses, and see your overall balance. Perfect for kids and teens who want to keep track of money they receive from relatives. ;)
+      One of the most useful tools I use regularly. It's a website with a simple UI and UX—no BS, as always. The core functionality helps track income and expenses, and see your overall balance. Perfect for kids and teens who want to keep track of money they receive from relatives. ;)
     </div>
     <div class="placeholder" id="placeholder4">
       <a href="https://satyaprakashsamai.github.io/instacard/" target="_blank">InstaCard –</a>
       I noticed my friends and family struggling to create invitation cards for birthdays and hangouts, often spending hours just to make a simple one. So, I decided to build my own front-end website where users can simply type in the event name, date & time, and venue, and—BOOM!—their invitation card is ready.
     </div>
+
+    <!-- Download PPT button -->
+    <a href="Healing Hut.pptx" class="download-btn" download>Download the PPT</a>
 
     <!-- Footnote -->
     <p class="footnote">Feel free to explore all my projects &lt;3</p>
